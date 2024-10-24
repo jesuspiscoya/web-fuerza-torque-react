@@ -4,7 +4,7 @@ export const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-[#051029f6] text-white text-center flex flex-col gap-8 md:gap-14 px-8 py-7 md:py-10 md:px-16">
-      <div className="flex flex-col md:flex-row justify-between gap-10">
+      <div className="container flex flex-col md:flex-row justify-between gap-10">
         <div className="flex flex-col items-center md:items-start gap-7 md:gap-0">
           <img src={logo} alt="Logo de la empresa" className="h-16 md:h-20 my-auto" />
           <div className="flex gap-7">

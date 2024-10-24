@@ -6,6 +6,24 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const btnRef = useRef(null);
   const menuRef = useRef(null);
+  const items = [
+    {
+      name: "Inicio",
+      link: "/",
+    },
+    {
+      name: "Servicios",
+      link: "/servicios",
+    },
+    {
+      name: "Herramientas",
+      link: "/herramientas",
+    },
+    {
+      name: "Nosotros",
+      link: "/nosotros",
+    },
+  ];
 
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 50);
@@ -44,8 +62,9 @@ export const Navbar = () => {
         isScrolled ? "bg-gray-900" : "bg-transparent"
       }`}
     >
+      {/* Navbar responsive mobile */}
       <div className="flex md:hidden justify-between items-center">
-        <a href="#">
+        <a href="/">
           <img src={logo} alt="Logo Company" className="w-24" />
         </a>
         <button
@@ -63,75 +82,33 @@ export const Navbar = () => {
               : "max-h-0 opacity-100 overflow-hidden"
           }`}
         >
-          <a
-            href="#"
-            className="font-medium hover:text-red-500 hover:bg-blue-gray-700 transition duration-200 px-8 py-3"
-          >
-            Inicio
-          </a>
-          <a
-            href="#"
-            className="font-medium hover:text-red-500 hover:bg-blue-gray-700 transition duration-200 px-8 py-3"
-          >
-            Servicios
-          </a>
-          <a
-            href="#"
-            className="font-medium hover:text-red-500 hover:bg-blue-gray-700 transition duration-200 px-8 py-3"
-          >
-            Herramientas
-          </a>
-          <a
-            href="#"
-            className="font-medium hover:text-red-500 hover:bg-blue-gray-700 transition duration-200 px-8 py-3"
-          >
-            Nosotros
-          </a>
-          <a
-            href="#"
-            className="font-medium hover:text-red-500 hover:bg-blue-gray-700 transition duration-200 px-8 py-3"
-          >
-            Contacto
-          </a>
+          {items.map((item, index) => (
+            <a
+              key={index}
+              href={item.link}
+              className="font-medium hover:text-red-500 hover:bg-blue-gray-700 transition duration-200 px-8 py-3"
+            >
+              {item.name}
+            </a>
+          ))}
         </div>
       </div>
-      <div className="hidden md:flex justify-between items-center">
-        <a href="#">
+      {/* Navbar desktop */}
+      <div className="container hidden md:flex justify-between items-center">
+        <a href="/">
           <img src={logo} alt="Logo Company" className="w-28" />
         </a>
         <ul className="flex gap-10">
-          <li>
-            <a
-              href="#"
-              className="font-semibold hover:text-red-500 transition duration-200"
-            >
-              Inicio
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="font-semibold hover:text-red-500 transition duration-200"
-            >
-              Servicios
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="font-semibold hover:text-red-500 transition duration-200"
-            >
-              Herramientas
-            </a>
-          </li>
-          <li>
-            <a
-              href="#"
-              className="font-semibold hover:text-red-500 transition duration-200"
-            >
-              Nosotros
-            </a>
-          </li>
+          {items.map((item, index) => (
+            <li key={index}>
+              <a
+                href={item.link}
+                className="font-semibold hover:text-red-500 transition duration-200"
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
         </ul>
         <a
           href="#"

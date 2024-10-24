@@ -48,6 +48,16 @@
   font-style: normal;
 }
 
+.rubik {
+  font-family: "Rubik", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .btn-contact:hover {
   box-shadow: none !important;
 }
@@ -80,8 +90,6 @@
 }
 
 .parallax-bg-2 {
-  top: 7rem;
-  bottom: 7rem;
   position: absolute;
   background-image: url("../assets/marcas.jpg");
   background-position: center;
