@@ -1,10 +1,17 @@
 import { Navbar } from "../components/Navbar";
 import { Slider } from "../components/Slider";
 import { Carousel } from "../components/Carousel";
+import { ScrollAnimation } from "../components/ScrollAnimation";
 import { Footer } from "../components/Footer";
 import img1 from "../assets/img1.png";
 
 export const Home = () => {
+  const tools = [
+    "Herramientas hidráulicas",
+    "Herramientas neumáticas",
+    "Herramientas eléctricas",
+  ];
+
   return (
     <>
       <Slider />
@@ -12,45 +19,52 @@ export const Home = () => {
       <div className="bg-gradient-to-t from-gray-900 to-blue-gray-900 px-10 md:px-24 py-7">
         <div className="container min-h-screen flex flex-col md:flex-row items-center gap-10 md:gap-16">
           <div className="flex flex-col gap-7 text-center md:text-start">
-            <h1 className="text-6xl md:text-8xl caveat-700 text-white">
-              ¿Quiénes somos?
-            </h1>
-            <p className="md:text-lg text-yellow-50">
-              Somos una empresa 100% peruana, conformada por un equipo técnico
-              multidisciplinario con amplia experiencia en el servicio de e
-              mantenimiento reparación y alquiler de herramientas hidráulicas,
-              neumáticas y eléctricas.
-            </p>
+            <ScrollAnimation to="left">
+              <h1 className="text-6xl md:text-8xl caveat-700 text-white">
+                ¿Quiénes somos?
+              </h1>
+            </ScrollAnimation>
+            <ScrollAnimation to="right">
+              <p className="md:text-lg text-yellow-50">
+                Somos una empresa 100% peruana, conformada por un equipo técnico
+                multidisciplinario con amplia experiencia en el servicio de e
+                mantenimiento reparación y alquiler de herramientas hidráulicas,
+                neumáticas y eléctricas.
+              </p>
+            </ScrollAnimation>
             <div className="flex flex-wrap gap-4 justify-center md:justify-start md:gap-7">
-              <div className="flex items-center">
-                <i className="fa-solid fa-wrench fa-beat mr-4 text-yellow-700"></i>
-                <span className="text-yellow-50">Herramientas hidráulicas</span>
-              </div>
-              <div className="flex items-center">
-                <i className="fa-solid fa-wrench fa-beat mr-4 text-yellow-700"></i>
-                <span className="text-yellow-50">Herramientas neumáticas</span>
-              </div>
-              <div className="flex items-center">
-                <i className="fa-solid fa-wrench fa-beat mr-4 text-yellow-700"></i>
-                <span className="text-yellow-50">Herramientas eléctricas</span>
-              </div>
+              {tools.map((tool, index) => (
+                <ScrollAnimation key={index} to="left">
+                  <div className="flex items-center">
+                    <i className="fa-solid fa-wrench fa-beat mr-4 text-yellow-700"></i>
+                    <span className="text-yellow-50">{tool}</span>
+                  </div>
+                </ScrollAnimation>
+              ))}
             </div>
           </div>
-          <img
-            src={img1}
-            alt="Sobre nosotros"
-            className="md:max-w-[36rem] ring-2 ring-blue-gray-200 rounded-xl shadow-lg md:shadow-2xl shadow-yellow-700 md:shadow-yellow-700 object-cover mb-4 md:mb-0"
-          />
+          <ScrollAnimation to="bottom">
+            <img
+              src={img1}
+              alt="Sobre nosotros"
+              className="md:max-w-[36rem] ring-2 ring-blue-gray-200 rounded-xl shadow-lg md:shadow-2xl shadow-yellow-700 md:shadow-yellow-700 object-cover mb-4 md:mb-0"
+            />
+          </ScrollAnimation>
         </div>
       </div>
       <div className="relative flex min-h-screen md:overflow-hidden">
         <div className="parallax-bg" />
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-black/75">
           <div className="container flex flex-col py-7 md:flex-row md:gap-10 text-center items-center h-full">
-            <h1 className="caveat-700 text-5xl md:text-8xl text-yellow-700 md:text-white px-20 md:w-1/2">
-              ¿Qué hacemos?
-            </h1>
-            <div className="md:w-1/2 text-center p-8 md:px-14 flex flex-col justify-center md:bg-black/70 rounded-3xl md:ring-1 md:shadow-2xl md:shadow-black">
+            <ScrollAnimation to="left">
+              <h1 className="caveat-700 text-5xl md:text-8xl text-yellow-700 md:text-white px-20 md:w-1/2">
+                ¿Qué hacemos?
+              </h1>
+            </ScrollAnimation>
+            <ScrollAnimation
+              to="bottom"
+              className="md:w-1/2 text-center p-8 md:px-14 flex flex-col justify-center md:bg-black/70 rounded-3xl md:ring-1 md:shadow-2xl md:shadow-black"
+            >
               <h1 className="hidden md:block text-xl md:text-2xl font-bold text-yellow-700">
                 SOLUCIONES
               </h1>
@@ -83,7 +97,7 @@ export const Home = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </ScrollAnimation>
           </div>
         </div>
       </div>
@@ -91,12 +105,14 @@ export const Home = () => {
         <div className="parallax-bg-2 top-14 bottom-14 md:top-28 md:bottom-28" />
         <div className="relative h-full bg-black/70 text-yellow-50 w-full py-20 md:py-24">
           <div className="container flex flex-col gap-7">
-            <div className="flex flex-col items-center text-center md:items-start">
-              <h1 className="text-xl md:text-2xl font-bold text-yellow-700">
-                NUESTRAS MARCAS
-              </h1>
-              <div className="h-0.5 bg-red-600 w-40 md:w-52 mt-1 mb-5"></div>
-            </div>
+            <ScrollAnimation to="right">
+              <div className="flex flex-col items-center text-center md:items-start">
+                <h1 className="text-xl md:text-2xl font-bold text-yellow-700">
+                  NUESTRAS MARCAS
+                </h1>
+                <div className="h-0.5 bg-red-600 w-40 md:w-52 mt-1 mb-5"></div>
+              </div>
+            </ScrollAnimation>
             <Carousel />
           </div>
         </div>

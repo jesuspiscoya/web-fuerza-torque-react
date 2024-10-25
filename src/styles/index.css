@@ -53,11 +53,6 @@
   font-optical-sizing: auto;
 }
 
-.container {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .btn-contact:hover {
   box-shadow: none !important;
 }
@@ -98,7 +93,7 @@
   width: 100%;
 }
 
-.animate-scroll {
+.animate-carousel {
   animation: move 25s linear infinite;
   width: calc(15rem * 8 + 3rem * 8);
 }

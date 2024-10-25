@@ -13,7 +13,7 @@ export const Carousel = () => {
 
   return (
     <div className="w-full overflow-hidden">
-      <div className="flex whitespace-nowrap animate-scroll">
+      <div className="flex whitespace-nowrap animate-carousel">
         {[...brands, ...brands].map((brand, index) => (
           <div
             key={index}

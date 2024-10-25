@@ -37,8 +37,7 @@ export const Navbar = () => {
     // Cierra el menú si se hace clic fuera de él
     if (
       (!menuRef.current.contains(e.target) &&
-        !btnRef.current.contains(e.target)) ||
-      menuRef.current.contains(e.target)
+        !btnRef.current.contains(e.target))
     ) {
       setIsOpen(false);
     }
@@ -58,8 +57,8 @@ export const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 right-0 left-0 text-lg text-white px-9 md:px-16 py-4 z-50 transition-colors duration-500 ${
-        isScrolled ? "bg-gray-900" : "bg-transparent"
+      className={`fixed top-0 right-0 left-0 text-lg text-white px-7 md:px-16 py-4 z-50 transition-colors duration-500 ${
+        isScrolled ? "bg-blue-gray-700" : "bg-transparent"
       }`}
     >
       {/* Navbar responsive mobile */}
@@ -72,11 +71,11 @@ export const Navbar = () => {
           className="flex md:hidden text-white"
           onClick={toggleMenu}
         >
-          <i className="fa-solid fa-bars-staggered fa-xl"></i>
+          <i className="fa-solid fa-bars fa-xl"></i>
         </button>
         <div
           ref={menuRef}
-          className={`flex flex-col absolute top-[4.2rem] left-0 right-0 bg-blue-gray-600 text-base transition-all duration-200 ease-in-out ${
+          className={`flex flex-col absolute top-[3.9rem] left-0 right-0 bg-gray-900 text-base transition-all duration-200 ease-in-out ${
             isOpen
               ? "max-h-64 opacity-100"
               : "max-h-0 opacity-100 overflow-hidden"

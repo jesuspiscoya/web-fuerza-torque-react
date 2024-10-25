@@ -1,4 +1,5 @@
 import { Carousel } from "@material-tailwind/react";
+import { ScrollAnimation } from "./ScrollAnimation";
 import img1 from "../assets/herramientas.jpg";
 import img2 from "../assets/industrias.jpg";
 import img3 from "../assets/industrias2.jpg";
@@ -54,14 +55,16 @@ export const Slider = () => {
           <img src={item.img} className="h-screen w-full object-cover" />
           <div className="absolute inset-0 grid h-full w-full place-items-center bg-black/75">
             <div className="w-3/4 text-center md:w-2/4 text-gray-300 flex flex-col gap-12">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-yellow-700 lilita-one-regular">
-                {item.title}
-              </h1>
-              <div>
+              <ScrollAnimation to={"top"} delay={200}>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-yellow-700 lilita-one-regular">
+                  {item.title}
+                </h1>
+              </ScrollAnimation>
+              <ScrollAnimation to={"left"} delay={700}>
                 <p className="text-base md:text-xl font-medium">
                   {item.description}
                 </p>
-              </div>
+              </ScrollAnimation>
             </div>
           </div>
         </div>
