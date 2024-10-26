@@ -35,16 +35,11 @@
   font-weight: 600;
   font-style: normal;
 }
+
 .caveat-700 {
   font-family: "Caveat", cursive;
   font-optical-sizing: auto;
   font-weight: 700;
-  font-style: normal;
-}
-
-.righteous-regular {
-  font-family: "Righteous", serif;
-  font-weight: 400;
   font-style: normal;
 }
 
@@ -55,21 +50,6 @@
 
 .btn-contact:hover {
   box-shadow: none !important;
-}
-
-.list-somos {
-  list-style: none;
-  /* position: relative; */
-}
-
-.list-somos li::before {
-  /* position: absolute; */
-  /* left: 0; */
-  content: "\f0ad";
-  color: #d2ba00;
-  font-family: FontAwesome;
-  display: inline-block;
-  width: var(--icon-space);
 }
 
 .parallax-bg {
@@ -105,10 +85,6 @@
 .ring-bottom:hover {
   transition: all 300ms;
   box-shadow: 0 1px 0.5px #d2ba00;
-}
-
-.group:hover div {
-  animation-play-state: paused; /* Detiene la animación al hacer hover */
 }
 
 @keyframes move {

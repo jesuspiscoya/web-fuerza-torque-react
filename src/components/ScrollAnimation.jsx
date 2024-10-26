@@ -23,7 +23,7 @@ export const ScrollAnimation = ({
   };
 
   useEffect(() => {
-    setIsVisible(true);
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -49,9 +49,7 @@ export const ScrollAnimation = ({
     <div
       ref={ref}
       className={`transform transition-all duration-1000 ${
-        isVisible
-          ? "opacity-100 translate-x-0"
-          : `opacity-0 ${direction}`
+        isVisible ? "opacity-100 translate-x-0" : `opacity-0 ${direction}`
       } ${className}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
