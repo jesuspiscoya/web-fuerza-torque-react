@@ -6,7 +6,7 @@ import "./styles/index.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/web-fuerza-torque">
       <App />
     </BrowserRouter>
   </StrictMode>
